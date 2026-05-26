@@ -10,20 +10,16 @@
 </p>
 
 <div align="center">
-  <strong>
-    Ming Xie |
-    Zizheng Huang |
-    Xudong Tan |
-    Chao Wang
-  </strong>
+  Ming Xie |
+  Zizheng Huang |
+  Xudong Tan |
+  Chao Wang
   <br>
-  <strong>
-    Xiangyu Zeng |
-    Wenxiao Wu |
-    Tao Chen |
-    Limin Wang |
-    Yanwei Fu
-  </strong>
+  Xiangyu Zeng |
+  Wenxiao Wu |
+  Tao Chen |
+  Limin Wang |
+  Yanwei Fu
 </div>
 
 
