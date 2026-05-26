@@ -28,14 +28,6 @@
 
 
 <p align="center">
-  <a href="assets/teaser.png"><strong>Teaser</strong></a>
-  &nbsp;|&nbsp;
-  <a href="assets/data_statis.png"><strong>Data Statistics</strong></a>
-  &nbsp;|&nbsp;
-  <a href="assets/framework.png"><strong>Framework Overview</strong></a>
-</p>
-
-<p align="center">
 StreamOV is a streaming omni-video understanding framework for online audio-visual reasoning with bounded memory and proactive response triggering.
 </p>
 
@@ -50,9 +42,7 @@ StreamOV is a streaming omni-video understanding framework for online audio-visu
 
 ## Abstract
 
-Streaming omni-video understanding requires models to continuously process synchronized visual and audio streams, preserve useful history under bounded computation, and decide when the current evidence is sufficient for a response. Existing omni-modal models are mostly designed for offline settings, and existing benchmarks rarely evaluate continuous multi-turn interaction, proactive response timing, or intentional silence.
-
-We propose **StreamOV**, a streaming omni-video understanding framework for efficient online audio-visual reasoning. StreamOV builds compact multimodal evidence from both query-agnostic stream dynamics and query-aware semantic relevance, maintains a long-short term memory under a fixed budget, and uses a hidden-state-driven trigger to decide whether to respond or wait. We also introduce **SOVBench**, a benchmark for online, multi-turn omni-video evaluation.
+Streaming omni-video understanding requires models to continuously process synchronized visual and audio streams, preserve useful history under bounded computation, and decide when the current evidence is sufficient for a response. Existing omni-modal models are mostly designed for offline settings, and existing benchmarks rarely evaluate continuous multi-turn interaction, proactive response timing, or intentional silence. We propose **StreamOV**, a streaming omni-video understanding framework for efficient online audio-visual reasoning. StreamOV builds compact multimodal evidence from both query-agnostic stream dynamics and query-aware semantic relevance, maintains a long-short term memory under a fixed budget, and uses a hidden-state-driven trigger to decide whether to respond or wait. We also introduce **SOVBench**, a benchmark for online, multi-turn omni-video evaluation.
 
 ## Method Overview
 
@@ -79,8 +69,8 @@ Current benchmark statistics:
 
 | Split | Size | Focus |
 | --- | ---: | --- |
-| SOVBench-O | 172 sessions, 1,739 QA turns, 969 dialogue groups | Multi-round online omni-video comprehension |
-| SOVBench-T | 226 samples, 120 positive and 106 negative | Proactive response triggering and intentional silence |
+| SOVBench-O | 172 sessions, 1,739 QAs, 969 dialogue groups | Multi-round online omni-video comprehension |
+| SOVBench-T | 226 samples, 120 positive and 106 negative | Response triggering and intentional silence |
 
 SOVBench-O covers 15 top-level categories and 86 fine-grained semantic categories across diverse real-world video domains.
 
