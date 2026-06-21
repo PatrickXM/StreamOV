@@ -7,6 +7,9 @@
   <a href="https://github.com/PatrickXM/StreamOV">
     <img src="https://img.shields.io/badge/Code-Coming%20Soon-blue?style=flat-square&logo=github" alt="Code"/>
   </a>
+  <a href="https://huggingface.co/datasets/PatrickyMing/StreamOV">
+    <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-SOVBench--T-yellow?style=flat-square" alt="Dataset"/>
+  </a>
 </p>
 
 <div align="center">
@@ -33,6 +36,7 @@ StreamOV is a streaming omni-video understanding framework for online audio-visu
 
 ## News
 
+- **[2026/06/21]** SOVBench-T train and eval data released on [Hugging Face](https://huggingface.co/datasets/PatrickyMing/StreamOV). SOVBench-O will be open-sourced soon.
 - **[2026/05/25]** Paper released on arXiv.
 - Code, SOVBench benchmark data, evaluation scripts, and VLMEvalKit integration are on the release plan.
 
@@ -54,7 +58,7 @@ StreamOV contains three main components:
 
 ## SOVBench
 
-We will open-source **SOVBench**, our benchmark for streaming omni-video understanding.
+We open-source **SOVBench**, our benchmark for streaming omni-video understanding. The train and eval data of **SOVBench-T** are available on [Hugging Face](https://huggingface.co/datasets/PatrickyMing/StreamOV), and **SOVBench-O** will be open-sourced soon.
 
 SOVBench has two complementary parts:
 
@@ -77,7 +81,8 @@ SOVBench-O covers 15 top-level categories and 86 fine-grained semantic categorie
 
 ## Release Plan
 
-- [ ] Release SOVBench benchmark.
+- [x] Release SOVBench-T train and eval data.
+- [ ] Release SOVBench-O benchmark.
 - [ ] Add VLMEvalKit integration.
 - [ ] Release evaluation scripts.
 - [ ] Release StreamOV code.
