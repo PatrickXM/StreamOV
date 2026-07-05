@@ -8,6 +8,9 @@
     <img src="https://img.shields.io/badge/Code-Coming%20Soon-blue?style=flat-square&logo=github" alt="Code"/>
   </a>
   <a href="https://huggingface.co/datasets/PatrickyMing/StreamOV">
+    <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-SOVBench--O-yellow?style=flat-square" alt="Dataset"/>
+  </a>
+  <a href="https://huggingface.co/datasets/PatrickyMing/StreamOV">
     <img src="https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-SOVBench--T-yellow?style=flat-square" alt="Dataset"/>
   </a>
 </p>
@@ -36,7 +39,8 @@ StreamOV is a streaming omni-video understanding framework for online audio-visu
 
 ## News
 
-- **[2026/06/21]** SOVBench-T train and eval data released on [Hugging Face](https://huggingface.co/datasets/PatrickyMing/StreamOV). SOVBench-O will be open-sourced soon.
+- **[2026/07/05]** SOVBench-O benchmark data updated on [Hugging Face](https://huggingface.co/datasets/PatrickyMing/StreamOV).
+- **[2026/06/21]** SOVBench-T train and eval data released on [Hugging Face](https://huggingface.co/datasets/PatrickyMing/StreamOV).
 - **[2026/05/25]** Paper released on arXiv.
 - Code, SOVBench benchmark data, evaluation scripts, and VLMEvalKit integration are on the release plan.
 
@@ -58,7 +62,7 @@ StreamOV contains three main components:
 
 ## SOVBench
 
-We open-source **SOVBench**, our benchmark for streaming omni-video understanding. The train and eval data of **SOVBench-T** are available on [Hugging Face](https://huggingface.co/datasets/PatrickyMing/StreamOV), and **SOVBench-O** will be open-sourced soon.
+We open-source **SOVBench**, our benchmark for streaming omni-video understanding. The train and eval data of **SOVBench-T** and the benchmark data of **SOVBench-O** are available on [Hugging Face](https://huggingface.co/datasets/PatrickyMing/StreamOV).
 
 SOVBench has two complementary parts:
 
@@ -78,12 +82,41 @@ Current benchmark statistics:
 
 SOVBench-O covers 15 top-level categories and 86 fine-grained semantic categories across diverse real-world video domains.
 
+## VLMEvalKit Integration
+
+We provide a VLMEvalKit dataset implementation in [`streamov_bench/streaming_omni.py`](streamov_bench/streaming_omni.py). The following dataset entries evaluate SOVBench-O at 1 FPS in sample-level and group-level multi-turn settings:
+
+```python
+from functools import partial
+
+streaming_omni_dataset = {
+    'Streaming-Omni_sample_1fps': partial(
+        StreamingOmni,
+        dataset='Streaming-Omni',
+        mode='sample_level_multi_turn',
+        fps=1.0,
+        use_audio=False,
+        pack=False,
+    ),
+    'Streaming-Omni_group_1fps': partial(
+        StreamingOmni,
+        dataset='Streaming-Omni',
+        mode='group_level_multi_turn',
+        fps=1.0,
+        use_audio=False,
+        pack=False,
+    ),
+}
+```
+
+Here `use_audio=False` disables standalone audio extraction and `type='audio'` inputs from the dataset. For omni models that can read audio directly from video files, also disable the model-side video-audio option if a visual-only evaluation is required.
+
 
 ## Release Plan
 
 - [x] Release SOVBench-T train and eval data.
-- [ ] Release SOVBench-O benchmark.
-- [ ] Add VLMEvalKit integration.
+- [x] Release SOVBench-O benchmark.
+- [x] Add VLMEvalKit integration.
 - [ ] Release evaluation scripts.
 - [ ] Release StreamOV code.
 
